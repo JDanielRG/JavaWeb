@@ -1,0 +1,131 @@
+body{
+   background-image: url(https://www.cosglobalservices.com/wp-content/uploads/2017/06/fondo-servicios-gestion-puesto-trabajo.jpg);
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+}
+    
+li{
+   padding: 0px 12px 0px 12px;
+}
+
+span{
+   padding-right: 2px;
+}
+
+input, select {
+     margin-bottom: 5px
+ }
+
+.bg-dark-png {
+   background-color: #212529cf;
+}
+
+.table{
+   text-align: center;
+}
+
+.cardx{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    padding: 14px 80px 18px 36px;
+    cursor: pointer;
+}
+
+.cardz{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card h3{
+    font-weight: 600;
+}
+
+.card img{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    max-height: 120px;
+}
+.cards{
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+.card-1{
+    background-image: url(../resources/images/cita.jpg);
+}
+
+.card-2{
+    background-image: url(../resources/images/consultorio.jpg);
+}
+
+.card-3{
+    background-image: url(../resources/images/medico.jpg);
+}
+
+.card-4{
+    background-image: url(../resources/images/paciente.jpg);
+}
+
+@media(max-width: 990px){
+.card{
+    margin: 20px;
+    }
+}
+
+.dropdown-item{
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+}
+
+html, body{
+    height: 100%
+}
+
+.site-container{
+    overflow: visible;
+    min-height: 78%;
+    min-width: 960px;
+    padding: 0px 40px 0px 40px;
+}
+
+.column{
+    margin-left: 40px;
+}
+
+.footer{
+    padding-bottom: 3200px;
+    margin-bottom: -3200px;
+ }
+ 
+ .line{
+     border-color: #0000
+ }
+ 
+ .margin{
+     margin: 15px 0px 20px 0px;
+ }
+ 
+ .fas1{
+     margin-left: 25px;
+ }
+ 
+ .fas2{
+     margin-left: 25px;
+ }

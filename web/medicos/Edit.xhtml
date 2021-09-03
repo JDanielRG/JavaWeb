@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditMedicosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <div align="center">
+                    <div class="card cardz" style="width: 43rem;">
+                        <h:form class="form">
+                            <h5 style="margin: 10px 0px 30px 0px;">Editar Médico</h5>
+                            <h:panelGrid columns="4">
+                                
+                                <h:outputLabel value="#{bundle.EditMedicosLabel_medIdentificacion}" for="medIdentificacion" />
+                                <h:inputText class="form-control" id="medIdentificacion" value="#{medicosController.selected.medIdentificacion}" title="#{bundle.EditMedicosTitle_medIdentificacion}" required="true" requiredMessage="#{bundle.EditMedicosRequiredMessage_medIdentificacion}">
+                                    <f:passThroughAttribute name="type" value="number"/>
+                                </h:inputText>
+                                
+                                <h:outputLabel value="#{bundle.EditMedicosLabel_medEspecialidad}" for="medEspecialidad" class="column"/>
+                                <h:inputText class="form-control" id="medEspecialidad" value="#{medicosController.selected.medEspecialidad}" title="#{bundle.EditMedicosTitle_medEspecialidad}" required="true" requiredMessage="#{bundle.EditMedicosRequiredMessage_medEspecialidad}"/>
+                                
+                                <h:outputLabel value="#{bundle.EditMedicosLabel_medNombres}" for="medNombres" />
+                                <h:inputText class="form-control" id="medNombres" value="#{medicosController.selected.medNombres}" title="#{bundle.EditMedicosTitle_medNombres}" required="true" requiredMessage="#{bundle.EditMedicosRequiredMessage_medNombres}"/>
+                                
+                                <h:outputLabel value="#{bundle.EditMedicosLabel_medApellidos}" for="medApellidos" class="column"/>
+                                <h:inputText class="form-control" id="medApellidos" value="#{medicosController.selected.medApellidos}" title="#{bundle.EditMedicosTitle_medApellidos}" required="true" requiredMessage="#{bundle.EditMedicosRequiredMessage_medApellidos}"/>
+                                
+                                <h:outputLabel value="#{bundle.EditMedicosLabel_medTelefono}" for="medTelefono" />
+                                <h:inputText class="form-control" id="medTelefono" value="#{medicosController.selected.medTelefono}" title="#{bundle.EditMedicosTitle_medTelefono}" required="true" requiredMessage="#{bundle.EditMedicosRequiredMessage_medTelefono}">
+                                    <f:passThroughAttribute name="type" value="number"/>
+                                </h:inputText>
+                                
+                                <h:outputLabel value="#{bundle.EditMedicosLabel_medCorreo}" for="medCorreo" class="column"/>
+                                <h:inputText class="form-control" id="medCorreo" value="#{medicosController.selected.medCorreo}" title="#{bundle.EditMedicosTitle_medCorreo}" required="true" requiredMessage="#{bundle.EditMedicosRequiredMessage_medCorreo}"/>
+                            </h:panelGrid>
+                            <h:commandLink class="btn btn-outline-primary margin" action="#{medicosController.update}" value="#{bundle.EditMedicosSaveLink}"/>
+                        </h:form>
+                    </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</html>

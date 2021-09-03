@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Centro Médico</title>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+        <link href="resources/css/jsfcrud.css" rel="stylesheet" type="text/css"/>
+        <link rel="icon" href="resources/images/icon.png"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!--<script type="text/javascript">
+            document.oncontextmenu = function () {
+                return false;
+            }
+        </script>-->
+    </h:head>
+
+    <h:body style="padding-left: 20px; padding-right: 20px; text-align: left;">
+        <div id="encabezado">
+        </div>
+        <nav id="menu">
+            <h:form>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark-png" style="padding-left: 16px; padding-right: 16px; margin-bottom: 40px; background-color: #45526ec4; border-radius: 4px; text-align: center">
+                    <a class="navbar-brand" style="padding-top: 0px; padding-bottom: 0px; font-family: Lucida Calligraphy; font-size: 25px">Centro Médico</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"/>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item active li">
+                                <h:commandLink class="nav-link active" action="inicio"><span class="fas fa-home"/> Inicio</h:commandLink>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="fas fa-file-alt"/> Citas
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li style="text-align: center;"><h:commandLink class="dropdown-item" action="asignar_citas"><span class="fas fa-plus"/> Registrar</h:commandLink></li>
+                                    <li><h:commandLink class="dropdown-item" action="consultar_citas"><span class="fas fa-search"/> Consultar</h:commandLink></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="fas fa-clinic-medical"/> Consultorios
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><h:commandLink class="dropdown-item" action="asignar_consultorios"><span class="fas fa-plus"/> Registrar</h:commandLink></li>
+                                    <li><h:commandLink class="dropdown-item" action="consultar_consultorios"><span class="fas fa-search"/> Consultar</h:commandLink></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="fas fa-user-md"/> Médicos
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><h:commandLink class="dropdown-item" action="asignar_medicos"><span class="fas fa-plus"/> Registrar</h:commandLink></li>
+                                    <li><h:commandLink class="dropdown-item" action="consultar_medicos"><span class="fas fa-search"/> Consultar</h:commandLink></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class='fas fa-user-injured'/> Pacientes
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><h:commandLink class="dropdown-item" action="asignar_pacientes"><span class="fas fa-plus"/> Registrar</h:commandLink></li>
+                                    <li><h:commandLink class="dropdown-item" action="consultar_pacientes"><span class="fas fa-search"/> Consultar</h:commandLink></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </h:form>
+        </nav>
+        <div id="contenido" class="site-container">
+            <div>
+                <ui:insert name="body">Body por Defecto</ui:insert>
+            </div>
+        </div>
+        <div>
+            <!-- Footer -->
+            <footer style="background-color: #45526ec4; border-radius: 4px;" class="text-right text-lg-start text-white">
+                <!-- Grid container -->
+                <div class="container p-1 pb-0">
+                    <!-- Section: Links -->
+
+
+                    <!-- Section: Copyright -->
+                    <section class="p-1 pt-0">
+                        <div class="row d-flex align-items-center">
+                            <!-- Grid column -->
+                            <div class="col-md-7 col-lg-8 text-center text-md-start">
+                                <!-- Copyright -->
+                                <div class="p-3">V 1.2 © 2021 Copyright:
+                                    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                                </div>
+                                <!-- Copyright -->
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                                <!-- Facebook -->
+                                <div class="p-1">Derechos de Autor: Daniel Romero</div>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                    </section>
+                    <!-- Section: Copyright -->
+                </div>
+                <!-- Grid container -->
+            </footer>
+            <!-- Footer -->
+        </div>
+    </h:body>
+
+
+</html>

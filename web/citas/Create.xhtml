@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCitasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <div align="center">
+                <div class="card cardz" style="width: 57rem;">
+                    <h:form class="form">
+                        <h5 style="margin: 10px 0px 30px 0px;">Registrar Citas</h5>
+                        <h:panelGrid columns="4">
+                            <h:outputLabel value="#{bundle.CreateCitasLabel_idCita}" for="idCita" />
+                            <h:inputText class="form-control" id="idCita" value="#{citasController.selected.idCita}" title="#{bundle.CreateCitasTitle_idCita}" required="true" requiredMessage="#{bundle.CreateCitasRequiredMessage_idCita}">
+                                <f:passThroughAttribute name="type" value="number"/>
+                            </h:inputText>
+                            
+                            <h:outputLabel value="#{bundle.CreateCitasLabel_citFecha}" for="citFecha" class="column"/>
+                            <h:inputText class="form-control" id="citFecha" value="#{citasController.selected.citFecha}" title="#{bundle.CreateCitasTitle_citHora}" required="true" requiredMessage="#{bundle.CreateCitasRequiredMessage_citHora}">
+                                <f:passThroughAttribute name="type" value="date"/>
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
+                            </h:inputText>
+
+                            <h:outputLabel value="#{bundle.CreateCitasLabel_citHora}" for="citHora" />
+                            <h:inputText class="form-control" id="citHora" value="#{citasController.selected.citHora}" title="#{bundle.CreateCitasTitle_citHora}" required="true" requiredMessage="#{bundle.CreateCitasRequiredMessage_citHora}">
+                                <f:passThroughAttribute name="type" value="time"/>
+                                <f:convertDateTime pattern="HH:mm" />
+                            </h:inputText>
+
+                            <h:outputLabel value="#{bundle.CreateCitasLabel_citEstado}" for="citEstado" class="column"/>
+                            <h:selectOneRadio value="#{citasController.selected.citEstado}">
+                                <f:selectItem itemValue="Asignado" itemLabel="&nbsp;Asignado&nbsp;&nbsp;&nbsp;"></f:selectItem>
+                                <f:selectItem itemValue="Atendido" itemLabel="&nbsp;Atendido&nbsp;&nbsp;&nbsp;"></f:selectItem>
+                                <f:selectItem itemValue="Cancelado" itemLabel="&nbsp;Cancelado"></f:selectItem>
+                            </h:selectOneRadio>
+
+                            <h:outputLabel value="#{bundle.CreateCitasLabel_citObservaciones}" for="citObservaciones" />
+                            <h:inputTextarea class="form-control" cols="30" id="citObservaciones" style="width: 325px; margin-bottom: 5px" value="#{citasController.selected.citObservaciones}" title="#{bundle.CreateCitasTitle_citObservaciones}" required="true" requiredMessage="#{bundle.CreateCitasRequiredMessage_citObservaciones}"/>
+                            
+                            <h:outputLabel value="#{bundle.CreateCitasLabel_citConsultorio}" for="citConsultorio" class="column"/>
+                            <h:selectOneMenu class="form-control" id="citConsultorio" value="#{citasController.selected.citConsultorio}" title="#{bundle.CreateCitasTitle_citConsultorio}" required="true" requiredMessage="#{bundle.CreateCitasRequiredMessage_citConsultorio}">
+                                <f:selectItems value="#{consultoriosController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+
+                            <h:outputLabel value="#{bundle.CreateCitasLabel_citMedico}" for="citMedico" />
+                            <h:selectOneMenu class="form-control" id="citMedico" value="#{citasController.selected.citMedico}" title="#{bundle.CreateCitasTitle_citMedico}" required="true" requiredMessage="#{bundle.CreateCitasRequiredMessage_citMedico}">
+                                <f:selectItems value="#{medicosController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+
+                            <h:outputLabel value="#{bundle.CreateCitasLabel_citPaciente}" for="citPaciente" class="column"/>
+                            <h:selectOneMenu class="form-control" id="citPaciente" value="#{citasController.selected.citPaciente}" title="#{bundle.CreateCitasTitle_citPaciente}" required="true" requiredMessage="#{bundle.CreateCitasRequiredMessage_citPaciente}">
+                                <f:selectItems value="#{pacientesController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+                        </h:panelGrid>
+                        <h:commandLink class="btn btn-outline-success margin" action="#{citasController.create}" value="#{bundle.CreateCitasSaveLink}" />
+                    </h:form>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</html>
